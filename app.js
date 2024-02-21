@@ -33,7 +33,9 @@ app.use('/api/v1/jobs/', authenticationMiddleware, jobsRouter)
 app.use(errorHandlerMiddleware)
 app.use(notFoundMiddleware)
 
-
+app.get('/', async(req, res) => {
+  res.json({msg: 'success'})
+})
 
 const port = process.env.port || 3000
 
